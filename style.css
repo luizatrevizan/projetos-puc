@@ -45,11 +45,18 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.card,
-.form-control,
-.form-select,
-.btn {
-  border-radius: 1rem;
+.card img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .product-image {
