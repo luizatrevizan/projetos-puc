@@ -1,0 +1,100 @@
+:root {
+  --pet-primary: #234e70;
+  --pet-secondary: #3c8dad;
+  --pet-accent: #ffb703;
+  --pet-light: #f8fafc;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 2000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--pet-primary), var(--pet-secondary));
+  color: white;
+}
+
+.hero-image {
+  height: 420px;
+  object-fit: cover;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card,
+.form-control,
+.form-select,
+.btn {
+  border-radius: 1rem;
+}
+
+.product-image {
+  height: 240px;
+  object-fit: cover;
+}
+
+.service-card {
+  background: linear-gradient(180deg, #ffffff, #eef7fb);
+}
+
+#resumoAgendamento {
+  min-height: 120px;
+}
+
+.list-group-item {
+  border-left: 0;
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Reforço visual ao foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--pet-accent);
+  outline-offset: 2px;
+}
+
+/* Pequeno ajuste no texto do carrossel para leitura */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  .hero-image {
+    height: 260px;
+  }
+}
