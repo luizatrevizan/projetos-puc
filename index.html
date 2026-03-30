@@ -1,80 +1,396 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Planet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Planet</title>
+  <meta name="description" content="Sistema web para petshop com catálogo, serviços e agendamento de banho e tosa.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
 
-    <header>
+  <header class="bg-dark text-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark container" aria-label="Menu principal">
+      <a class="navbar-brand fw-bold" href="#inicio">Pet Planet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cadastro">Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#agendamento">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ajustes">Ajustes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <section id="titulo-site">
+  <main id="conteudo">
+    <section id="inicio" class="hero-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <span class="badge rounded-pill text-bg-warning mb-3">Fase 2 do projeto</span>
+            <h1 class="display-5 fw-bold">Pet Planet: produtos, serviços e agendamentos em um só lugar</h1>
+            <p class="lead">Formulário completo de cliente e pet e agendamento para tele-busca ou entrega no local.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#agendamento" class="btn btn-primary btn-lg">Agendar agora</a>
+              <a href="#produtos" class="btn btn-outline-light btn-lg">Ver catálogo</a>
+            </div>
+            <p class="mt-3 mb-0 small" id="relogio" aria-live="polite">Carregando data e hora...</p>
+          </div>
+          <div class="col-lg-6">
+            <div id="carouselPetPlanet" class="carousel slide shadow rounded-4 overflow-hidden" data-bs-ride="carousel" aria-label="Carrossel de destaques do petshop">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPetPlanet" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselPetPlanet" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselPetPlanet" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 hero-image" alt="Cachorro sendo cuidado em petshop, representando o serviço de banho.">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Banho com cuidado</h2>
+                    <p>Higiene, conforto e atenção para o seu pet.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 hero-image" alt="Cachorro com brinquedo, representando a categoria de acessórios do petshop.">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Acessórios e diversão</h2>
+                    <p>Produtos selecionados para o dia a dia do seu animal.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 hero-image" alt="Profissional do petshop segurando um gato, representando atendimento e carinho.">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Agendamento prático</h2>
+                    <p>Escolha o dia, o horário e a forma de entrega do pet.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselPetPlanet" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselPetPlanet" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <img src="images/logo-pet-planet.png" alt="Logotipo Pet Planet" width="200">
+    <section id="produtos" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="section-title">
+          <h2>Produtos por categoria</h2>
+          <p>Estrutura baseada na fase 1, agora com visual em cards.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80" class="card-img-top product-image" alt="Coleira e brinquedo colorido para cachorro, representando a categoria de acessórios.">
+              <div class="card-body">
+                <h3 class="h5">Acessórios</h3>
+                <p>Roupinhas, brinquedos, camas e itens de passeio.</p>
+                <ul class="mb-0">
+                  <li>Coleira ajustável — R$ 39,90</li>
+                  <li>Cama acolchoada — R$ 129,90</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=900&q=80" class="card-img-top product-image" alt="Potes de ração organizados em prateleira, representando a categoria de rações não perecíveis.">
+              <div class="card-body">
+                <h3 class="h5">Rações não perecíveis</h3>
+                <p>Opções para cães e gatos com diferentes portes e idades.</p>
+                <ul class="mb-0">
+                  <li>Ração premium 10kg — R$ 189,90</li>
+                  <li>Ração para filhotes 3kg — R$ 79,90</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=80" class="card-img-top product-image" alt="Produtos de higiene para pets sobre bancada, representando higiene e limpeza.">
+              <div class="card-body">
+                <h3 class="h5">Higiene e limpeza</h3>
+                <p>Itens essenciais para manter a saúde e o conforto do pet.</p>
+                <ul class="mb-0">
+                  <li>Tapete higiênico 30 un. — R$ 54,90</li>
+                  <li>Shampoo neutro — R$ 24,90</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </section>
+    <section id="servicos" class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Serviços do petshop</h2>
+          <p>Banho e tosa com possibilidade de tele-busca ou entrega no local.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="card service-card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title">Banho</h3>
+                <p class="card-text">Higienização completa, secagem e escovação.</p>
+                <p class="fw-semibold mb-0">Valor inicial: R$ 60,00</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="card service-card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title">Tosa</h3>
+                <p class="card-text">Tosa higiênica ou completa, conforme a necessidade do pet.</p>
+                <p class="fw-semibold mb-0">Valor inicial: R$ 75,00</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <nav id="menu-principal">
+    <section id="cadastro" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cadastro do cliente e do pet</h2>
+          <p>Formulário com campos variados, obrigatórios e preparados para uso no navegador.</p>
+        </div>
 
-            <a href="index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Serviços</a>
+        <form id="formCadastro" class="row g-4" novalidate>
+          <div class="col-12">
+            <h3 class="h5">Dados do cliente</h3>
+          </div>
 
-        </nav>
+          <div class="col-md-6">
+            <label for="nomeCliente" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="nomeCliente" placeholder="Digite o nome do cliente" required>
+            <div class="invalid-feedback">Informe o nome do cliente.</div>
+          </div>
 
-    </header>
+          <div class="col-md-3">
+            <label for="cpfCliente" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpfCliente" placeholder="000.000.000-00" required>
+            <div class="invalid-feedback">Informe o CPF.</div>
+          </div>
 
-    <hr>
+          <div class="col-md-3">
+            <label class="form-label d-block">Sexo</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexoCliente" id="sexoF" value="Feminino" required>
+              <label class="form-check-label" for="sexoF">Feminino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexoCliente" id="sexoM" value="Masculino" required>
+              <label class="form-check-label" for="sexoM">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexoCliente" id="sexoOutro" value="Outro" required>
+              <label class="form-check-label" for="sexoOutro">Outro</label>
+            </div>
+          </div>
 
-    <main>
+          <div class="col-md-6">
+            <label for="enderecoCliente" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="enderecoCliente" placeholder="Rua, número e bairro" required>
+            <div class="invalid-feedback">Informe o endereço.</div>
+          </div>
 
-        <section id="apresentacao-site">
+          <div class="col-md-3">
+            <label for="telefoneCliente" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefoneCliente" placeholder="(00) 00000-0000" required>
+            <div class="invalid-feedback">Informe o telefone.</div>
+          </div>
 
-            <h2>Bem-vindo ao Pet Planet</h2>
+          <div class="col-md-3">
+            <label for="emailCliente" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="emailCliente" placeholder="cliente@email.com" required>
+            <div class="invalid-feedback">Informe um e-mail válido.</div>
+          </div>
 
-            <p>
-                Bem-vindo ao Pet Planet, um universo dedicado ao cuidado e à felicidade
-                dos animais de estimação. Aqui seu pet encontra um verdadeiro planeta
-                de produtos, acessórios e serviços pensados para oferecer mais conforto,
-                saúde e diversão no dia a dia.      
-            </p>
+          <div class="col-12">
+            <h3 class="h5">Dados do pet</h3>
+          </div>
 
-            <p>
-                Explore nosso mundo pet e descubra tudo o que preparamos para o seu melhor amigo.
-            </p>
+          <div class="col-md-4">
+            <label for="nomePet" class="form-label">Nome do pet</label>
+            <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" required>
+            <div class="invalid-feedback">Informe o nome do pet.</div>
+          </div>
 
-        </section>
+          <div class="col-md-4">
+            <label for="racaPet" class="form-label">Raça</label>
+            <input type="text" class="form-control" id="racaPet" placeholder="Ex.: Shih-tzu" required>
+            <div class="invalid-feedback">Informe a raça.</div>
+          </div>
 
-        <section id="navegacao-principal">
+          <div class="col-md-2">
+            <label for="idadePet" class="form-label">Idade</label>
+            <input type="number" class="form-control" id="idadePet" min="0" max="30" placeholder="0" required>
+            <div class="invalid-feedback">Informe a idade.</div>
+          </div>
 
-            <a href="produtos.html">
-                <button>Ver Produtos</button>
-            </a>
+          <div class="col-md-2">
+            <label for="portePet" class="form-label">Porte</label>
+            <select class="form-select" id="portePet" required>
+              <option value="">Selecione</option>
+              <option>Pequeno</option>
+              <option>Médio</option>
+              <option>Grande</option>
+            </select>
+            <div class="invalid-feedback">Selecione o porte.</div>
+          </div>
 
-            <a href="servicos.html">
-                <button>Ver Serviços</button>
-            </a>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="necessidadesEspeciais">
+              <label class="form-check-label" for="necessidadesEspeciais">
+                O pet possui necessidade especial ou observação importante
+              </label>
+            </div>
+          </div>
 
-        </section>
+          <div class="col-12">
+            <label for="observacoesPet" class="form-label">Observações</label>
+            <textarea class="form-control" id="observacoesPet" rows="3" placeholder="Informe alergias, comportamento ou cuidados específicos."></textarea>
+          </div>
+        </form>
+      </div>
+    </section>
 
-    </main>
+    <section id="agendamento" class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Agendamento de serviços</h2>
+          <p>Escolha o serviço, a forma de atendimento e o horário desejado.</p>
+        </div>
 
-    <hr>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <form id="formAgendamento" class="card shadow-sm border-0 p-4" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="servico" class="form-label">Serviço</label>
+                  <select id="servico" class="form-select" required>
+                    <option value="">Selecione</option>
+                    <option value="Banho">Banho</option>
+                    <option value="Tosa">Tosa</option>
+                  </select>
+                  <div class="invalid-feedback">Selecione um serviço.</div>
+                </div>
 
-    <footer>
+                <div class="col-md-6">
+                  <label class="form-label d-block">Forma de atendimento</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="formaAtendimento" id="teleBusca" value="Tele-busca" required>
+                    <label class="form-check-label" for="teleBusca">Tele-busca</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="formaAtendimento" id="entregaLocal" value="Entrega no local" required>
+                    <label class="form-check-label" for="entregaLocal">Entrega no local</label>
+                  </div>
+                </div>
 
-        <section id="informacoes-legais">
+                <div class="col-md-6">
+                  <label for="dataAgendamento" class="form-label">Data</label>
+                  <input type="date" id="dataAgendamento" class="form-control" required>
+                  <div class="invalid-feedback">Escolha uma data válida.</div>
+                </div>
 
-            <p>Pet Planet - Todos os direitos reservados</p>
-            <p>Contato: contato@petplanet.com</p>
+                <div class="col-md-6">
+                  <label for="horaAgendamento" class="form-label">Horário</label>
+                  <input type="time" id="horaAgendamento" class="form-control" min="08:00" max="18:00" required>
+                  <div class="invalid-feedback">Escolha um horário entre 08:00 e 18:00.</div>
+                </div>
 
-        </section>
+                <div class="col-12 d-none" id="grupoEnderecoColeta">
+                  <label for="enderecoColeta" class="form-label">Endereço para tele-busca</label>
+                  <input type="text" id="enderecoColeta" class="form-control" placeholder="Informe o endereço da coleta">
+                  <div class="form-text">Este campo será exigido quando a opção tele-busca estiver selecionada.</div>
+                </div>
 
-    </footer>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Salvar agendamento</button>
+                  <button type="button" class="btn btn-outline-secondary ms-2" id="limparAgendamentos">Limpar lista</button>
+                </div>
+              </div>
+            </form>
+          </div>
 
+          <div class="col-lg-5">
+            <aside class="card shadow-sm border-0 p-4 h-100">
+              <h3 class="h5">Resumo do atendimento</h3>
+              <div id="resumoAgendamento" class="small">
+                Preencha os dados para visualizar o resumo do agendamento.
+              </div>
+              <hr>
+              <h3 class="h5">Agendamentos salvos</h3>
+              <ul id="listaAgendamentos" class="list-group list-group-flush" aria-live="polite"></ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ajustes" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ajustes realizados na fase 2</h2>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h3 class="h5">Estrutura e visual</h3>
+                <ul class="mb-0">
+                  <li>Aplicação de Bootstrap e CSS próprio.</li>
+                  <li>Criação de carrossel e cards para produtos e serviços.</li>
+                  <li>Melhoria da organização visual e da responsividade.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h3 class="h5">Interatividade e acessibilidade</h3>
+                <ul class="mb-0">
+                  <li>Formulários com validação e campos obrigatórios.</li>
+                  <li>JavaScript para resumo, relógio e armazenamento local.</li>
+                  <li>Uso de texto alternativo, skip link e labels associadas.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p class="mb-1">Pet Planet • Sistema web acadêmico para a disciplina Fundamentos de Sistemas Web</p>
+      <p class="mb-0 small">Fase 2 com Bootstrap, JavaScript, cadastro e agendamento.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
